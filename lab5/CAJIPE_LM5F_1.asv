@@ -1,0 +1,39 @@
+%{
+    Create a MATLAB script for the following problem:
+
+    Write a MATLAB function that will plot cos(x) for x values ranging from –pi to pi 
+    in steps of 0.1, using black stars (*). 
+    It will do this three times across in one Figure Window, with varying line widths. 
+
+    (Note: Even if individual points are plotted rather than a solid line, 
+    the line width property will change the size of these points.) 
+    If no arguments are passed to the function, the line widths will be 1, 2, and 3. 
+
+    elseif, an argument is passed to the function, 
+    it is a multiplier for these values 
+    (e.g., if 3 is passed, the line widths will be 3, 6, and 9). 
+    The line widths will be printed in the titles on the plots.
+%}
+
+    function plot_cos(width_mult)
+    %UNTITLED3 Summary of this function goes here
+    %   Detailed explanation goes here
+    if nargin == 0
+        width_mult = 1;
+    end
+    
+    line_widths = [1*width_mult, 2*width_mult, 3*width_mult];
+    
+    fig = figure();
+    for line_width = line_widths
+        plot_cosine(line_width, fig);
+    end
+    
+    function plot_cosine(width, fig)
+        x = -pi:0.1:pi;
+        plot(x, cos(x), 'k*', 'LineWidth', width);
+        title(['Line width = ', num2str(width)]);
+        set(fig, 'Name', 'Cosine');
+        uiwait(fig);
+    end
+    end

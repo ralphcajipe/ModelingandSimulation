@@ -53,7 +53,7 @@ plot(speed_10,kwh_10,'LineWidth',2)
 % legend provides visual aid to distinguish between the two curves
 legend('5 feet blade','10 feet blade')
 
-title('Generated Electricty Vs Wind speed')
+title('Generated Electricty vs Wind speed')
 
 xlabel('Wind speed (mph)')
 

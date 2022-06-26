@@ -59,6 +59,9 @@ xlabel('Wind speed (mph)')
 
 ylabel('Generated Electricity (kWh)')
 
+% Save the figure as a .png file
+saveas(gcf,'turbine_data.png')
+
 %{ 
     Observation:
     The generated electricity is higher for 10 feet blade diameter 
